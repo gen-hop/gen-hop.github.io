@@ -8,8 +8,16 @@
     <meta name="author" content="">
 
     <title>G-HOP: Generative Hand-Object Prior for Interaction Reconstruction and Grasp Synthesis</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./template/offcanvas.css">
+    <!-- Bootstrap core CSS -->
+    <!-- link href="bootstrap.min.css" rel="stylesheet" -->
+    <!-- <link rel="stylesheet" href="./template/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./template/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="./template/offcanvas.css" rel="stylesheet">
+    <script type="text/javascript" src="template/hidebib.js"></script>
+
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
 <style type="text/css">/* Copyright 2014-present Evernote Corporation. All rights reserved. */
 @keyframes caretBlink {
     from { opacity: 1.0; }
@@ -201,12 +209,25 @@
         <a class="btn btn-second" href='#grasp' target='_self'>Synthesizing Plausible Human Grasps</a>
     </div>
     </p>
+
+
+</div>
+
+<div class="container">
+    <div class="section">
+        <h4>Note for viewing the project website</h4>      
+        <div class="col justify-content-left"> 
+            <p>
+    Intearctive 3D meshes can only be viewed when hosted on a server due to CORS security in browsers. You can either host it the locally (e.g. by a simple python server) or view the identical website hosted on <a href="https://gen-hop.github.io"> https://gen-hop.github.io </a>. 
+            </p>
+         </div>
+     </div>
 </div>
 
 
 <div class="container">
     <div class="section">
-        <h2 id="method_overview">Generative Hand-Object Prior</h2>      
+        <h2 id="generation">Generative Hand-Object Prior</h2>      
         <div class="col justify-content-left"> 
             <div class="col justify-content-center text-center">
                 <h3> Method Overview</h3>
@@ -220,6 +241,24 @@
             </p>
          </div>
 
+
+        <div class="col justify-content-center text-center">
+            <h3> HOI Generations </h3>
+        </div> 
+        <div class="flex-container">
+            <table><tbody>
+                <thead><tr><th>Input</th><th>Output 0</th><th>Output 1</th><th>Output 2</th><th>Output 3</th><th>Output 4</th></tr></thead>
+<tr><td>power drill</td><td><model-viewer src="gen/r80c01_power drill_jHoi_00.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r80c02_power drill_jHoi_01.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r80c03_power drill_jHoi_02.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r80c04_power drill_jHoi_03.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r80c05_power drill_jHoi_04.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td></tr>
+<!-- <tr><td>game controller</td><td><model-viewer src="gen/r09c01_game controller_jHoi_00.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r09c02_game controller_jHoi_01.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r09c03_game controller_jHoi_02.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r09c04_game controller_jHoi_03.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r09c05_game controller_jHoi_04.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td></tr>                 -->
+<tr><td>spray</td><td><model-viewer src="gen/r62c01_spray_jHoi_00.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r62c02_spray_jHoi_01.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r62c03_spray_jHoi_02.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r62c04_spray_jHoi_03.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r62c05_spray_jHoi_04.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td></tr>
+<tr><td>plate</td><td><model-viewer src="gen/r34c01_plate_jHoi_00.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r34c02_plate_jHoi_01.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r34c03_plate_jHoi_02.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r34c04_plate_jHoi_03.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r34c05_plate_jHoi_04.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td></tr>
+<tr><td>wine glass</td><td><model-viewer src="gen/r46c01_wine glass_jHoi_00.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r46c02_wine glass_jHoi_01.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r46c03_wine glass_jHoi_02.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r46c04_wine glass_jHoi_03.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="gen/r46c05_wine glass_jHoi_04.glb" style="width:150px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td></tr>
+
+            </tbody></table>
+        </div>  
+        <div class="col justify-content-left">
+            More <a href="gen/vis.html">generations</a>.
+        </div>       
      </div>
 
 <hr>
@@ -227,7 +266,7 @@
         <h2 id="recon">Reconstructing Interaction Clips</h2>
         <div class="col justify-content-left"> 
             <div class="col justify-content-center text-center">
-                <h3> Method Overview</h3>
+                <h3> Prior-Guided Reconstruction</h3>
                 <img src="method_recon.png" width="60%"> 
             </div>
             <p>
@@ -240,8 +279,13 @@
 
         <div class="row justify-content-left">  
             <div class="col justify-content-center text-center">
-                <h3> Comparison with Baselines </h3>
+                <h3> Comparison with Baselines </h3>                
             </div> 
+            <div>
+        We compare with three template-free baselines: DiffHOI(Ye et al., ICCV23), iHOI (Ye et al.,CVPR 22) and HHOR(Huang et al., SIGGRAPHA 22). In contrast to G-HOP (ours), DiffHOI guides reconstruction with hand-conditioned image-based prior and its reconstructed shapes are coarse; iHOI makes per-frame prediction and it's not temporally-consistent; HHOR  does not use any data-driven priors and it struggles to hallucinate unobserved area. <br>
+
+In each of the quadruplet, we visualize reconstruction of HOI in the image frame (top left), reconstruction from a novel view (top right). We also visualize reconstruction of HOI at the middle time step (bottom left), and reconstruction of the rigid object over the sequence (bottom right). Note that objects reconstructed by iHOI are visualized along time since it makes per-frame predictions.                
+            </div>
 
             <table><tbody>
             <tr><td> </td><td><a href="recon/header.png"><img src="recon/header.png" width="900"> </a> </td></tr>
@@ -250,7 +294,7 @@
             </tbody></table>
                 <div class="col justify-content-left">
                     <a href="recon/vis.html">Baseline comparisons</a> and <a href="ablation/vis.html">ablation study</a> on HOI4D.<br>
-                    More <a href="wild/vis.html">in-the-wild clips</a>.
+                    More <a href="vid_wild/vis.html">in-the-wild clips</a>.
                 </div>  
                     
         </div>
@@ -263,7 +307,7 @@
         <h2 id="grasp">Synthesizing Plausible Human Grasps</h2>
         <div class="col justify-content-left"> 
             <div class="col justify-content-center text-center">
-                <h3> Method Overview</h3>
+                <h3> Prior-Guided Grasp Synthesis</h3>
                 <img src="method_grasp.png" width="60%"> 
             </div>
             <p>
@@ -275,11 +319,15 @@
          </div>
 
 
-
         <div class="col justify-content-center text-center">
             <h3> Comparison with Baselines </h3>
         </div> 
         <div class="flex-container">
+            <div>
+                We compare with a baseline GraspTTA (Jiang et al, ICCV 21) and ground truth annotations (GT) on HO3D. In contrast to G-HOP (ours), GraspTTA synthesizes grasps that use more finger tip rather than palm region; GT are plausible and contains reaching out motion as it comes from a video sequences. Note that grasp generation is multi-modal, and geenration can be different from GT.  <br>
+
+                We visualize the synthesized grasps by each methods. 
+            </div>
             <table><tbody>
                 <tr><th>Input Object</th><th>GT</th><th>GraspTTA</th><th>G-HOP</th></tr>
                 <tr><td><model-viewer src="grasp_ho3d/r00c00_037_scissors_00_oObj.glb" style="width:250px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="grasp_ho3d/r00c01_037_scissors_00_gt.glb" style="width:250px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="grasp_ho3d/r00c02_037_scissors_00_grasptta.glb" style="width:250px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td><td><model-viewer src="grasp_ho3d/r00c03_037_scissors_00_ours_refine.glb" style="width:250px" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting"></model-viewer></td></tr>
